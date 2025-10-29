@@ -5,7 +5,7 @@
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # CSV file containing schedule
-CSV_FILE="$SCRIPT_DIR/times.csv"
+PRAYER_TIMES_FILE="$SCRIPT_DIR/times.csv"
 
 # Get today's date in YYYY-MM-DD format
 TODAY_DATE=$(date +%m/%d/%Y)
@@ -18,7 +18,7 @@ while IFS=',' read -r date time1 time2 time3 time4 time5; do
         maghrib=$time4
         isha=$time5
     fi
-done < "$CSV_FILE"
+done < "$PRAYER_TIMES_FILE"
 
 echo "Fajr    $fajr"
 echo "Zuhr    $zuhr"
